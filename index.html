@@ -24,8 +24,8 @@
   http://stackoverflow.com/questions/11929099/html5-canvas-drawimage-ratio-bug-ios
   
   Brief Description of Goal of Code:
-  The app should take a picture (or allow you to load one) when you push the button and then display the picture on the canvas.   
-
+  image analysis: upload image to canvas, output image without red and gree tones to only show blue tones
+ 
   Known Issues:
   blah, blah, blah, blah
 -->
@@ -101,8 +101,6 @@
           /*  ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
           /* PUT ANY CHANGES TO THE JAVASCRIPT HERE  */
-         
-      
           
           
           
@@ -121,27 +119,6 @@
     } // end of the else statement if file in NOT an image
   }); // end of the fileInput.addEventListener function
  } // end of the window.onload function
-  
- //adds second canvas 
-  
-<canvas id="myCanvas2" width="400" height="300" style="border:1px solid #000000;"> </canvas> 
-
-  
-const canvas2 = document.getElementById('myCanvas2'); //declares variable that returns the canvas object based on the ID myCanvas
-const ctx2 = canvas.getContext('2d'); //declares variable that returns a 2-dimnesional drawing context on the canvas
-  
-//function that adds text in the canvas	
-function writeName(){
-  const canvas = document.getElementById('myCanvas');
-	 const ctx = canvas.getContext('2d');
-	
-	 ctx.font = "30px Arial"; //specifies font and font size of text in canvas 
-	 ctx.fillText("Blue Canvas", 10, 50); //specifies text and location of text in canvas, creates solid text 
-}
-
-  
-  
-  
  </script>
  </head>
 
@@ -164,6 +141,15 @@ function writeName(){
         context.font = '20pt Calibri';
         context.fillStyle = "black";
         context.fillText("Original image will go here", 10, 20);
+      </script>
+	    
+      <canvas id="myCanvas2" width=600 height=500 style="border:1px solid #d3d3d3;"></canvas>
+      <script> /* This script initiates the cavas and puts the text on the canvas "myCanvas" */
+        var canvas2 = document.getElementById('myCanvas2');
+        var context2 = canvas.getContext("2d");
+        context2.font = '20pt Calibri';
+        context2.fillStyle = "black";
+        context2.fillText("Output image will go here", 10, 20);
       </script>
 
     </div><!-- /content -->
